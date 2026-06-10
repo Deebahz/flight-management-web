@@ -1,0 +1,14 @@
+<script src=
+"https://cdn.jsdelivr.net/npm/chart.js">
+</script>
+<h1>Analytics Page</h1>
+
+<p>Records found: {{ aircraft_hours|length }}</p>
+
+{% for item in aircraft_hours %}
+    <p>
+        {{ item.aircraft__registration_no }}
+        -
+        {{ item.total }}
+    </p>
+{% endfor %}
