@@ -44,3 +44,10 @@ def aircraft_list(request):
             "aircrafts": aircrafts
         }
     )
+from django.http import JsonResponse
+
+def ping(request):
+    return JsonResponse({
+        "status": "ok",
+        "message": "UAMS Online"
+    })

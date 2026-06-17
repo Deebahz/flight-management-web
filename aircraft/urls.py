@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import aircraft_list, dashboard
+from .views import aircraft_list, dashboard,ping
 
 urlpatterns = [
     path(
@@ -12,5 +12,10 @@ urlpatterns = [
         'dashboard/',
         dashboard,
         name='dashboard'
+    ),
+    path(
+        "ping/",
+        ping,
+        name="ping"
     ),
 ]

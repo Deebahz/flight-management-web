@@ -25,4 +25,5 @@ urlpatterns = [
     path("api/",  include("flights.urls")),
     path("api/",include("maintenance.urls")),
     path("aircraft/",  include("aircraft.urls")),
+    path("api/", include("aircraft.urls"))
 ]

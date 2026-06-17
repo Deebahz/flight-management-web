@@ -3,6 +3,9 @@ from aircraft.models import Aircraft
 from .models import MaintenanceRecord
 
 import json
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
 def service_aircraft(request):
 
     if request.method != "POST":

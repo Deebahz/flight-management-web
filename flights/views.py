@@ -32,7 +32,9 @@ def analytics(request):
             "aircraft_hours": aircraft_hours
         }
     )
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def process_flight(request):
 
     if request.method != "POST":
@@ -112,6 +114,7 @@ def process_flight(request):
         return JsonResponse({
             "status":"success",
             "action":"CHECK_OUT",
+            "pilot":pilot.name,
             "hours":hours
         })
 
@@ -123,6 +126,7 @@ def process_flight(request):
 
     return JsonResponse({
         "status":"success",
-        "action":"CHECK_IN"
+        "action":"CHECK_IN",
+        "pilot":pilot.name,
     })
 
